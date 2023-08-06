@@ -9,13 +9,13 @@ app = Flask(__name__, template_folder=template_dir)
 app.secret_key = 'tu_clave_secreta'  # Reemplaza 'tu_clave_secreta' por una clave secreta segura
 
 # Rutas de la aplicación
-@app.route('/')
+@app.route('/') 
 def home():
     if 'username' in session:
         cursor = db.database.cursor()
         cursor.execute("SELECT * FROM users")
         myresult = cursor.fetchall()
-        # Convertir los datos a diccionario
+        # Convertir los datos a diccionarioooo
         insertObject = []
         columnNames = [column[0] for column in cursor.description]
         for record in myresult:
